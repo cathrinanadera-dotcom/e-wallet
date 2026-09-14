@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8" />
     <title>Welcome</title>
-    <link rel="stylesheet" href="e-wallet.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <style>
@@ -23,6 +22,12 @@
       }
 
       .container {
+        margin-top: 100px;
+         display: flex;
+         flex-direction: column;
+         justify-content: space-around;
+         gap: 400px;
+        align-items: center;
         text-align: center;
         padding: 20px;
         position: relative;
@@ -32,6 +37,7 @@
 
       .submit-btn {
         display: inline-block;
+        transform: rotateZ(-10px);
         background-color: #005abb; 
         color: white;
         padding: 14px 40px; 
@@ -42,19 +48,11 @@
         box-shadow: 0 4px 6px rgba(0,0,0,0.2);
       }
       
-      .dots-link {
-        color: white;
-        display: block;
-        margin-bottom: 5px;
-        text-decoration: none;
-        opacity: 0.5; 
-      }
     </style>
   </head>
   <body>
       <div class="container">
           <h1 style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);" id="title">Welcome to E-Wallet</h1>
-          <a href="Page1.html" class="dots-link">...</a>
           <a href="page1.html" class="submit-btn">Continue</a>
       </div>
   </body>
