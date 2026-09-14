@@ -1,0 +1,227 @@
+/* ----------------------------------------------------
+   GLOBAL RESET
+   Tinatanggal ang default na margin/padding ng browser
+   ---------------------------------------------------- */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+            
+/* ----------------------------------------------------
+   BODY STYLING
+   Inilalagay ang iyong wallet background image sa gitna
+   ---------------------------------------------------- */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    /* Ginamit ang iyong background at nilagyan ng madilim na tint (rgba) para madaling basahin ang teksto */
+    background-image: linear-gradient(rgba(208, 217, 243, 0.6), rgba(10, 15, 30, 0.6)), 
+                     url('https://img.magnific.com/premium-photo/digital-wallet-hand-crypto-blockchain-technology_551405-9542.jpg?w=360');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* ----------------------------------------------------
+   MAIN CARD (Glassmorphism Effect)
+   Mukhang transparent na salamin na lumulutang sa background
+   ---------------------------------------------------- */
+.main-card {
+    background: rgba(255, 255, 255, 0.08); /* Bahagyang transparent na puti */
+    backdrop-filter: blur(16px); /* Nagpapakintab at nagpapalabo sa background sa likod nito */
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.15); /* Manipis na puting linya sa gilid para magmukhang glass */
+    padding: 35px 25px;
+    border-radius: 28px;
+    width: 100%;
+    max-width: 360px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); /* Malalim na anino sa ilalim */
+}
+
+/* ----------------------------------------------------
+   TYPOGRAPHY / TEKSTO
+   ---------------------------------------------------- */
+h2#title {
+    color: #4b0ad3d5;
+    font-size: 38px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    text-shadow: 0 0 10px rgba(129, 13, 167, 0.796078431372549); /* Neon glow effect */
+}
+
+.subtitle, .dashboard-header, .bank-indicator {
+    color: #211168e5; /* Soft gray-white color */
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+#bankName {
+    color: #00c895; /* Kulay berde para sa pangalan ng bangko */
+}
+
+/* ----------------------------------------------------
+   MGA INPUT BOXES
+   ---------------------------------------------------- */
+input {
+    width: 100%; 
+    padding: 14px 16px; 
+    margin: 10px 0;
+    border-radius: 14px; 
+    border: 1px solid rgba(255, 255, 255, 0.2); 
+    background: rgba(255, 255, 255, 0.1); /* Transparent input slot */
+    color: #ffffff; /* Puti ang kulay ng letra kapag nagta-type ang user */
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Kapag cliniclick ng user ang loob ng input box */
+input:focus {
+    border-color: #ffffff;
+    background: rgba(235, 235, 235, 0.14901960784313725);
+    box-shadow: 0 0 10px rgba(31, 127, 250, 0.3);
+}
+
+/* Ginagawang kulay gray ang placeholder na text */
+::placeholder {
+    color: #94a3b8;
+    opacity: 1;
+}
+
+/* ----------------------------------------------------
+   MGA BUTTON / PINDUTAN
+   ---------------------------------------------------- */
+/* Base button class para sa lahat */
+button {
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* 1. Mga buttons sa pagpili ng bangko (Neon Blue outline style) */
+.bank-btn {
+    display: block; 
+    width: 100%; 
+    padding: 14px; 
+    margin-bottom: 12px;
+    background: rgba(31, 127, 250, 0.1); 
+    color: #ffffff;
+    font-weight: 600; 
+    border-radius: 16px; 
+    font-size: 16px;
+    border: 1px solid rgba(31, 127, 250, 0.4);
+}
+
+.bank-btn:hover { 
+    background: #1f7ffa; 
+    box-shadow: 0 0 15px rgba(31, 127, 250, 0.5);
+    transform: translateY(-2px); /* Tatalbog nang bahagya pataas */
+}
+
+/* 2. Pangunahing Action Button (Kulay Neon Mint/Green) */
+.action-btn { 
+    background: #00c895; 
+    color: #060d1a; 
+    border: none; 
+    padding: 14px; 
+    width: 100%; 
+    margin: 10px 0 4px 0; 
+    border-radius: 14px; 
+    font-weight: 700; 
+    font-size: 16px;
+}
+
+.action-btn:hover { 
+    background: #2e81c7e3;
+    box-shadow: 0 0 15px rgba(0, 200, 149, 0.4);
+    transform: translateY(-2px);
+}
+
+/* 3. Pangalawang Button (Cancel / Back / Soft Gray) */
+.logout-btn {
+    background: rgba(67, 60, 178, 0.8980392156862745); 
+    color: #3f78bd; 
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    padding: 14px; 
+    width: 100%; 
+    border-radius: 14px; 
+    font-weight: 600; 
+    font-size: 16px;
+    margin-top: 8px;
+}
+
+.logout-btn:hover {
+    background: rgba(255, 255, 255, 0.18);
+}
+
+/* Espesyal na kulay pula para sa Logout button */
+.btn-danger {
+    background: rgba(233, 69, 96, 0.2);
+    border: 1px solid rgba(233, 69, 96, 0.4);
+}
+.btn-danger:hover {
+    background: #2626e1;
+    box-shadow: 0 0 15px rgba(233, 69, 96, 0.4);
+}
+
+/* ----------------------------------------------------
+   BALANCE PANEL / DISPLAY NG PERA
+   ---------------------------------------------------- */
+.balance {
+    font-size: 30px; 
+    font-weight: 800;
+    color: #2b0affcb; 
+    text-align: center; 
+    margin: 20px 0;
+    text-shadow: 0 0 10px rgba(0, 200, 149, 0.2);
+}
+
+/* ----------------------------------------------------
+   TRANSACTION HISTORY PANEL
+   ---------------------------------------------------- */
+.history-container {
+    text-align: left; 
+    margin: 25px 0 15px 0;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.history-container h4 {
+    color: #542a8c;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+#historyList {
+    padding-left: 0; 
+    font-size: 14px; 
+    list-style: none; /* Tinanggal ang default na dots */
+    max-height: 100px;
+    overflow-y: auto; /* Magkakaroon ng scrollbar kung mahaba ang listahan */
+}
+
+#historyList li {
+    padding: 4px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    color: #e2e8f0;
+}
+
+/* ----------------------------------------------------
+   INAYOS NA PAGE CONTROLS
+   Dito itinatago ang mga inactive screens para hindi mag-overlap
+   ---------------------------------------------------- */
+.hidden {
+    display: none !important;
+}
+

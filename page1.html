@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>e-wallet</title>
+        <link rel="stylesheet" href="e-wallet.css" />
+    <!-- Tinanggal ang sirang link sa Style.css para hindi mag-conflict -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  </head>
+  <body>
+    <!-- Nagsisimula ang main card container -->
+    <div class="main-card">
+      
+      <!-- 1. Screen para sa Pagpili ng Bangko -->
+      <div id="chooseBank">
+        <h2 id="title">E-Wallet</h2>
+        <p class="subtitle">Choose Online Bank</p>
+        
+        <div class="outer-box">
+          <button class="bank-btn inner-button" onclick="selectBank('G-Cash')">G-Cash</button>
+        </div>
+        <div class="outer-box">
+          <button class="bank-btn inner-button" onclick="selectBank('Cebuana')">Cebuana</button>
+        </div>
+        <div class="outer-box">
+          <button class="bank-btn inner-button" onclick="selectBank('Maya')">Maya</button>
+        </div>
+        <div class="outer-box">
+          <button class="bank-btn inner-button" onclick="selectBank('Maribank')">Maribank</button>
+        </div>
+        <div class="outer-box">
+          <button class="bank-btn inner-button" onclick="selectBank('BPI')">BPI</button>
+        </div>
+      </div>
+
+      <!-- 2. Screen para sa Login Box -->
+      <div id="loginBox" class="hidden">
+        <p><b>Bank:</b> <span id="selectedBank"></span></p>
+        <input type="text" id="mobileNumber" placeholder="Type the number">
+        <input type="password" id="password" placeholder="Password">
+        <button class="login-btn" onclick="login()" Style="background: rgba(40, 167, 69, 0.85);">Login</button>
+        <button class="back-btn" onclick="goBack('chooseBank')" Style="background: rgba(108, 117, 125, 0.85);">Back</button>
+      </div>
+
+      <!-- 3. Screen para sa Dashboard -->
+      <div id="dashboard" class="hidden">
+        <p> E-Wallet <b id="bankName"></b></p>
+        <div class="balance" id="balanceDisplay">Balance: 0</div>
+        <button class="action-btn" onclick="showAction('deposit')">Deposit → Check Balance</button>
+        <button class="action-btn" onclick="showAction('withdraw')">Withdraw → Start</button>
+        <button class="action-btn" onclick="showAction('transfer')">Transfer → Verify Receiver</button>
+        
+        <div class="history-container">
+          <h4>Transaction History</h4>
+          <ul id="historyList">
+            <!-- Dito papasok ang mga transaksyon gamit ang JS -->
+          </ul>
+        </div>
+
+        <button onclick="logout()" Style="background:rgba(233, 69, 96, 0.85); color:white; border:none; padding:15px; width:100%; border-radius:12px; font-weight:bold; margin-top: 15px;">End / Logout</button>
+      </div>
+  
+      <!-- 4. Screen para sa Input ng Halaga o Amount Box -->
+      <div id="actionBox" class="hidden">
+        <h3 id="actionTitle" Style="color: white; text-shadow: 1px 1px 2px black;"></h3>
+        <input type="number" id="amount" placeholder="Enter Amount">
+        <div id="receiverBox" class="hidden">
+          <input type="text" id="receiver" placeholder="Verify the Receiver - Mobile Number">
+        </div>
+        <button class="bank-btn" onclick="processAction()" Style="background: rgba(40, 167, 69, 0.85);">Confirm</button>
+        <button class="bank-btn" onclick="backToDashboard()" Style="background: rgba(108, 117, 125, 0.85);">Back</button>
+      </div>
+
+    </div>
+
+    <script src="E-wallet.js"></script>
+  </body>
+</html>
+
